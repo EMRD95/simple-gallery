@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <style>
+        .large-image-container {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .large-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .large-image-container .legend {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-shadow: 2px 1px 3px rgba(0, 0, 0, 1);
+            font-size: 18px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .thumbnail-container img {
+            width: calc(25% - 20px);
+            max-width: 106px;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin: 0 10px;
+        }
+    </style>
+    <script>
+        function swapImage(largeImageId, src, legend) {
+            document.getElementById(largeImageId).src = src;
+            document.getElementById(largeImageId + '-legend').innerText = legend;
+        }
+    </script>
+</head>
+<body>
+    <div class="large-image-container">
+        <img id="large-image-id-1" src="https:////.jpg" alt="large image">
+        <div id="large-image-id-1-legend" class="legend">Legend</div>
+    </div>
+    
+    <div class="thumbnail-container">
+        <img onclick="swapImage('large-image-id-1', this.src, this.title)" onmouseover="swapImage('large-image-id-1', this.src, this.title)" src="https:////.jpg" title="Legend" alt="thumb image">
+        <img onclick="swapImage('large-image-id-1', this.src, this.title)" onmouseover="swapImage('large-image-id-1', this.src, this.title)" src="https:////.jpg" title="Legend" alt="thumb image">
+        <img onclick="swapImage('large-image-id-1', this.src, this.title)" onmouseover="swapImage('large-image-id-1', this.src, this.title)" src="https:////.jpg" title="Legend" alt="thumb image">
+        <img onclick="swapImage('large-image-id-1', this.src, this.title)" onmouseover="swapImage('large-image-id-1', this.src, this.title)" src="https:////.jpg" title="Legend" alt="thumb image">
+    </div>
+</body>
+</html>
+
+<!-- Second gallery -->
+
+<body>
+    <div class="large-image-container">
+        <img id="large-image-id-2" src="https:////.jpg" alt="large image">
+        <div id="large-image-id-2-legend" class="legend">Legend</div>
+    </div>
+    
+    <div class="thumbnail-container">
+        <img onclick="swapImage('large-image-id-2', this.src, this.title)" onmouseover="swapImage('large-image-id-2', this.src, this.title)" src="https:////.jpg" title="Legend" alt="thumb image">
+        <img onclick="swapImage('large-image-id-2', this.src, this.title)" onmouseover="swapImage('large-image-id-2', this.src, this.title)" src="https:////.jpg" title="Legend" alt="thumb image">
+    </div>
+</body>
+
+<!-- Third gallery -->
+
+<body>
+    <div class="large-image-container">
+        <img id="large-image-id-3" src="https:////.jpg" alt="large image">
+        <div id="large-image-id-3-legend" class="legend">Legend</div>
+    </div>
+
+    <div class="thumbnail-container">
+        <img onclick="swapImage('large-image-id-3', this.src, this.title)" onmouseover="swapImage('large-image-id-3', this.src, this.title)" src="https:////.jpg" title="Legend" alt="thumb image">
+        <img onclick="swapImage('large-image-id-3', this.src, this.title)" onmouseover="swapImage('large-image-id-3', this.src, this.title)" src="https://LL.jpg" title="Legend" alt="thumb image">
+    </div>
+</body>
+</html>
